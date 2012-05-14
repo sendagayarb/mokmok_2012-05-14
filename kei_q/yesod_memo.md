@@ -169,7 +169,97 @@ $ yesod devel
 
 略
 
+# [Shakespearean Templates](http://www.yesodweb.com/book/shakespearean-templates)
+
+yesodが提供しているtemplate機能はshakespearというライブラリにまとまっている。
+
+- 訳せないorz
+- 的確なコンテンツであることをコンパイル時に保証する
+- 静的な型でCSSを防ぐ
+- URLがvalidかチェックしてくれる
+
+それぞれ以下のような名前で呼ばれる
+
+- HTML > Hamlet
+    - HTMLっぽいけどindent base
+- CSS > Cassius, Lucius
+    - Cassiusはsassみたいな記法 Luciusはscss
+- JS > Julius
+    - 構文そのまま。別の機能でcoffee-scriptもいけるぽい
+
+## Types
+
+これらのテンプレートでは'#{hoge}'のような形で変数を展開できる。
+このとき、デフォルトでescapeされる。
+ここで使用されている型などは [blaze-html](http://hackage.haskell.org/package/blaze-html)というパッケージを参照。
+
+## Type-safe URLs
+
+templateの展開のときに'@{hogeR}'というかたちでresourceを指定すると、それに応じたURLを展開する関数に変換される。
+もちろん直接URLを書くこともできるが、それだとroutingが変更されたときにlinkが無効になってしまう。
+この機能を使うと、型がURLの妥当性を確認してくれる。
+本文では中身を説明しているが、自動生成される関数なので省略。
+
+## Hamlet Syntax
+
+閉じタグ無しindent baseのHTML
+正直ちょっときもい
+
+- #{expr}
+    - 値の展開
+- @{resource}
+    - type-safe URLの展開
+- ^{template}
+    - hamletの展開
+
+詳しい書き方は省略
+
+## Lucius Syntax
+
+CSSでの色などが型として定義されているらしくて、以下のようなサンプルコードがあったけどもしかしたら型チェックしてくれるかも。
+
+```
+@textcolor: #ccc; /* just because we hate our users */
+body { color: #{textcolor} }
+a:link, a:visited { color: #{textcolor} }
+```
+
+## Julius Syntax
+
+値展開とかは同様
+hjsminを使ってminifyしてくれる?
+
+## Calling Shakespeare
+
+これらのテンプレートは以下の方法で読み込みできる
+
+- Quasiquotes
+        - 直接Haskellのコードに書くほうほう
+- External file
+        - 外部ファイルに定義してそれを読むほうほう
+
+reload modeで実行していると、これらのテンプレートを編集したときに再読み込みしてくれる
+ただし、Hamletはこの機能は提供していない。
+
+外部ファイルとして定義したほうが簡潔で分割しやすいので、基本こっちで。
+
+## Alternate Hamlet Types
+
+略
+
+## Other Shakespeare
+
+HTML, CSS, JS以外にも定義すれば使用できる
+例では単純なtextを挙げてる
+
+## General Recommendations
+
+略
+
 # 公開されている参考資料
+
+vimでhamlet, luciusとかのtemplateハイライトしてくれるらしい。すごい。
+https://github.com/pbrisbin/html-template-syntax
 
 ## http://www.yesodweb.com/book
 
