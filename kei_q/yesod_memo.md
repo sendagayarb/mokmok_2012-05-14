@@ -44,8 +44,6 @@ brew install haskell-platform
 cabal install yesod-platform
 yesod init
 
-
-
 # [Basic](http://www.yesodweb.com/book/basics)
 
 ## Hello World
