@@ -1,17 +1,17 @@
-#【モクモクテーマ】モクモクすることを書く
-* コレやります。
-* コレやります。
+#【】モクモクすることを書く
+* Railsのドキュメントを読む(http://rubyonrails.org/documentation)
 
 ## もくもくの記録
 ### 今日できたこと
-* コレやります。
+* とりあえずRails最新版(3.2.3)をインストール
+* blogと称したプロジェクトをRailsコマンドで作成
 
 ### 今日学んだこと
-* コレやります。
+* Rails2の頃と違ってDBのスキーマ作ってくれたりしていて楽だった
 
 ### 今日ハマったこと
-* コレやります。
-* こんなエラーが出て困りました。
+* MySQLのアダプタがgemでインストールできない問題
+* Could not find a valid gem 'activerecord-mysql2-adapter' (>= 0) in any repository
 
 ```
 Be watch my readme!
@@ -19,12 +19,12 @@ Be watch my readme!
 
 ## 個人のKPT
 ###Keep よかったー
-* コレやります。
+* Gitを学べた
 
 ###Problem ダメだったー
-* コレやります。
+* 事前にテーマを考えてなかった
 
 ###Try 改善・挑戦するー
-* コレやります。
+* なんでもいいのでテーマは最低限決めていく
 
 
